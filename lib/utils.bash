@@ -38,7 +38,7 @@ download_release() {
   version="$1"
   filename="$2"
 
-  url="$GH_REPO/releases/download/v${version}/${TOOL_NAME}-v${version}-$(get_platform)-$(get_arch).tar.gz"
+  url="$GH_REPO/releases/download/v${version}/${TOOL_NAME}-v${version}-$(get_platform)-$(get_arch).$(get_ext)"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -85,6 +85,40 @@ get_arch() {
     ;;
   "aarch64" | "arm64")
     echo "arm64"
+    ;;
+  *)
+    exit 1
+    ;;
+  esac
+}
+
+get_ext() {
+  local platform
+  platform=$(uname -s | tr '[:upper:]' '[:lower:]')
+  case $platform in
+  "linux")
+    echo "tar.gz"
+    ;;
+  "darwin")
+    echo "zip"
+    ;;
+  *)
+    exit 1
+    ;;
+  esac
+}
+
+extract() {
+  local file download_path ext
+  file="$1"
+  download_path="$2"
+  ext="$(get_ext)"
+  case $ext in
+  "tar.gz")
+    tar -xzf "$file" -C "$download_path"
+    ;;
+  "zip")
+    unzip "$file" -d "$download_path"
     ;;
   *)
     exit 1
