@@ -1,9 +1,9 @@
 <div align="center">
 
-# asdf-awsls [![Build](https://github.com/chessmango/asdf-awsls/actions/workflows/build.yml/badge.svg)](https://github.com/chessmango/asdf-awsls/actions/workflows/build.yml) [![Lint](https://github.com/chessmango/asdf-awsls/actions/workflows/lint.yml/badge.svg)](https://github.com/chessmango/asdf-awsls/actions/workflows/lint.yml)
+# asdf-iamlive [![Build](https://github.com/chessmango/asdf-iamlive/actions/workflows/build.yml/badge.svg)](https://github.com/chessmango/asdf-iamlive/actions/workflows/build.yml) [![Lint](https://github.com/chessmango/asdf-iamlive/actions/workflows/lint.yml/badge.svg)](https://github.com/chessmango/asdf-iamlive/actions/workflows/lint.yml)
 
 
-[awsls](https://github.com/jckuester/awsls) plugin for the [asdf version manager](https://asdf-vm.com).
+[iamlive](https://github.com/iann0036/iamlive) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -24,23 +24,23 @@
 Plugin:
 
 ```shell
-asdf plugin add awsls https://github.com/chessmango/asdf-awsls.git
+asdf plugin add iamlive https://github.com/chessmango/asdf-iamlive.git
 ```
 
-awsls:
+iamlive:
 
 ```shell
 # Show all installable versions
-asdf list-all awsls
+asdf list-all iamlive
 
 # Install specific version
-asdf install awsls latest
+asdf install iamlive latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global awsls latest
+asdf global iamlive latest
 
-# Now awsls commands are available
-awsls --version
+# Now iamlive commands are available
+iamlive -not-a-flag
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -50,7 +50,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/chessmango/asdf-awsls/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/chessmango/asdf-iamlive/graphs/contributors)!
 
 # License
 
