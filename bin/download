@@ -10,13 +10,13 @@ source "${plugin_dir}/lib/utils.bash"
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-release_file="$ASDF_DOWNLOAD_PATH/${TOOL_NAME}_${ASDF_INSTALL_VERSION}_$(get_platform)_$(get_arch).$(get_ext)"
+release_file="$ASDF_DOWNLOAD_PATH/${TOOL_NAME}-v${ASDF_INSTALL_VERSION}-$(get_platform)-$(get_arch).$(get_ext)"
 
 # Download archive file to the download directory
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
 #  Extract contents of archive file into the download directory
-extract "$release_file" "ASDF_DOWNLOAD_PATH" || fail "Could not extract $release_file"
+extract "$release_file" "$ASDF_DOWNLOAD_PATH" || fail "Could not extract $release_file"
 
 # Remove the archive file since we don't need to keep it
 rm "$release_file"
