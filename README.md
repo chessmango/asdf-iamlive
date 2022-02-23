@@ -40,7 +40,7 @@ asdf install iamlive latest
 asdf global iamlive latest
 
 # Now iamlive commands are available
-iamlive -not-a-flag
+iamlive -help
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to

@@ -4,7 +4,7 @@ set -euo pipefail
 
 GH_REPO="https://github.com/iann0036/iamlive"
 TOOL_NAME="iamlive"
-TOOL_TEST="iamlive -not-a-flag"
+TOOL_TEST="iamlive -help"
 
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
